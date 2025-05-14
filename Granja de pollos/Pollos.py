@@ -1,25 +1,32 @@
+from Base_datos import Base_datos  
+
 class Pollos:
-    #metodos contructores
-    def __init__(self):
+    # métodos constructores
+    def __init__(self, id_pollo, dato_edad):
         self.codigo_pollo = id_pollo
         self.edad_pollo = dato_edad
-        
-    #llamados de otras clases 
-    self_objBase_datos = base_datos() #el objeto de la clase 
 
+        # objeto de la base de datos
+        self.self_objBase_datos = Base_datos()
 
-
-    #metodos publicos de modificar atributos 
-    def getCodigo_pollo (self):
+    # métodos públicos para modificar atributos
+    def getCodigo_pollo(self):
         return self.codigo_pollo
 
-    def setCodigo_pollo (self , codigo_pollo):
+    def setCodigo_pollo(self, codigo_pollo):
         self.codigo_pollo = codigo_pollo
 
-    #metodos para conextar base de datos
+    def getEdad_pollo(self):  
+        return self.edad_pollo
+
+    def setEdad_pollo(self, edad_pollo): 
+        self.edad_pollo = edad_pollo
+
+    # métodos para conectar base de datos
     def guardar_pollo(self):
-        self.self_objBase_datos.guardar_pollo(obj_pollo)
-        
+        obj_pollo = [self.codigo_pollo, "desconocida", self.edad_pollo]  
+        self.self_objBase_datos.crear_pollo(obj_pollo) 
+
 
 
         
